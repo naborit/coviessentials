@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+   body {
+        background-image: url("{% static 'store\images\loginbackground.jpg' %}");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        object-fit: cover;
+      }
+      .loginbox {
+        background: hsla(0, 100%, 90%, 0.3);
+        height: 450px;
+        width: 500px;
+        top: 20%;
+        left: 35%;
+        position: static;
+        transform: translate(50%-50%);
+        box-sizing: border-box;
+        padding: 70px 30px;
+        border-radius: 10px;
+      }
+      .loginbox input {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .loginbox input[type="text"],
+      input[type="password"] {
+        border: none;
+        border-bottom: 1px solid #fff;
+        background:transparent;
+        outline: none;
+        height: 40px;
+        font-size: 16px;
+      }
+      .loginbox input[type="submit"],
+      input[type="reset"] {
+        border: none;
+        background: rgb(0, 0, 255);
+        opacity: 0.6;
+        outline: none;
+        height: 40px;
+        color: #cd5c5c;
+        font-size: 18px;
+        border-radius: 20px;
+      }
+      .loginbox input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        background: red;
+        color: #000;
+      }
+      a:hover,
+      a:focus {
+        color: red;
+        font-size: 20px;
+      }
+      h1 {
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 22px;
+      }
+      .loginbox p {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        font-weight: bold;
+        font-size: 18px;
+      }
+</style>
+<div>
+   <center>
+   <div class="loginbox">
+   <h2>Login Here</h2>
+   <form action="\login" method="POST">
+    {% csrf_token %}
+    {% if error %} 
+    <div class="alert alert-danger" role="alert">
+      <p>{{error}}</p>
+    </div>
+    {% endif %}
+   <p>Email id</p>
+   <input type="text" name="email" placeholder="example@gmail.com" required="required">
+   <p>Enter password</p>
+   <input type="password" name="password" placeholder="*******" required="required">
+
+<br>
+<input type="submit" value="Log in">
+<br>
+<h4>  <a href="signup">Click here to Sign Up </a></h4>
+
+</form>
+</div>
+</center>
+</div>
+{% endblock %}

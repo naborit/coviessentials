@@ -1,0 +1,394 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>EMERGENCY</title>
+    <style>
+
+*{
+    margin: 0;
+}
+body{
+     background-image:url("{% static 'store\images\wallpaperofemergency.jpg' %}");
+     backface-visibility: initial;
+
+}
+.group1{
+  margin-right: 40px;
+  margin-left: 30px;
+}
+
+h3{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 4px;
+    background-color: rgb(69, 212, 231);
+    text-decoration: dotted;
+    margin: 0;
+    font-style: oblique;
+    color: rgb(12, 7, 7);
+}
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+  }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  /* #customers  {
+
+    background-color: lightgoldenrodyellow
+  } */
+
+  #customers tr:hover {background-color: lightblue;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(56, 238, 238);
+    color: white;
+  }
+  h2{
+    background-color: rgb(90, 90, 216);
+    padding-left: 20px;
+    color: white;
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: white;
+  }
+
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 3px solid transparent;
+  }
+
+  .topnav a:hover {
+    border-bottom: 3px solid red;
+  }
+
+  .topnav a.active {
+    border-bottom: 3px solid red;
+  }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>EMERGENCY PROTAL</h3>
+        <div class="topnav">
+          <a href="/"><i class="fa fa-home" style="font-size:24px"></i></a>
+          <a class="active" id="back" href="#kolkata">KOLKATA</a>
+          <a href="#north24pargans">NORTH 24 PARGANAS</a>
+          <a href="#howrah">HOWRAH</a>
+        </div>
+        <div class="group1">
+          <div><h2 id="kolkata" style="text-align: center; color: rgb(5, 5, 3);">KOLKATA</h2></div>
+            <h2><i class="fa fa-ambulance" style="font-size:24px"></i> AMBULANCE</h2>
+<table id="customers">
+
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone no</th>
+  </tr>
+  <tr>
+    <td>Sarada Uddog</td>
+    <td>	57 F, Golpark Petrol Pump, Purna DAS Road, Gariahat, Kolkata – 700029</td>
+    <td>(033)66348350</td>
+  </tr>
+  <tr>
+    <td>Rabindra Pally Sanahati</td>
+    <td>A D 107, Kesthupur, Rabindra Pally, Prafulla Kanan, Kolkata – 700101</td>
+    <td>9674387427</td>
+  </tr>
+  <tr>
+    <td>Sebabroti</td>
+    <td>550/1, Rafi Ahmed Kidwai Road, Bangur Avenue-Lake Town, Kolkata – 700055</td>
+    <td>8013072794</td>
+  </tr>
+  <tr>
+    <td>Park Clinic</td>
+    <td>4, Near Gorky Terrace, Between Minto Park And Camac Street, Acharya Jagadish Chandra Bose Road, Circus Avenue, Kolkata – 700017</td>
+    <td>(033)40199000</td>
+  </tr>
+
+
+</table>
+<br>
+<h2><i class="fa fa-hospital-o" style="font-size:24px"></i> HOSPITAL</h2>
+<table id="customers">
+
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone no</th>
+  </tr>
+  <tr>
+    <td>Apollo Gleneagles Medical Centre</td>
+    <td>48/1F, Leela Roy Sarani, Gariahat Rd, near Orchestra Co-Operative Housing Society, Ballygunge, Kolkata, West Bengal 700019</td>
+    <td>03324619482</td>
+  </tr>
+  <tr>
+    <td>College of Medicine & Sagore Dutta Hospital</td>
+    <td>Kamarhati, Kolkata, West Bengal 700058</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Beleghata I.D. And B.G. Hospital</td>
+    <td> 57, Beleghata Main Rd, Subhas Sarobar Park, Phool Bagan, Beleghata, Kolkata, West Bengal 700010</td>
+    <td> 03323032200</td>
+  </tr>
+  <tr>
+    <td>P.G.Hospital (S.S.K.M)</td>
+    <td>50, Harish Mukherjee Rd, Bhowanipore, Kolkata, West Bengal 700025</td>
+    <td>03322236026</td>
+  </tr>
+
+
+</table>
+<br>
+<h2><i class="fa fa-heartbeat" style="font-size:24px"></i> OXYGEN REFILL CENTER</h2>
+<table id="customers">
+
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone no</th>
+  </tr>
+  <tr>
+    <td>Bijoli Seba Centre (Oxygen Division)</td>
+    <td>Ground Floor, 14, 1, Broad St, Kolkata, West Bengal 700019</td>
+    <td>9830623911</td>
+  </tr>
+  <tr>
+    <td>Eastern Oxygen Company</td>
+    <td>153/1A Diamond Harbour Road, D.H, Road, beside Balananda Hospital, Gholeshapur, Behala, Kolkata, West Bengal 700034</td>
+    <td>03324787989</td>
+  </tr>
+
+
+
+</table>
+        </div>
+<br><p style="text-align:right; padding-right:40px;" ><a href="#back"> Back</a>
+        <div class="group1">
+            <div><h2 id="north24pargans" style="text-align: center; color: rgb(3, 5, 5);">NORTH 24 PARGANAS</h2></div>
+            <h2><i class="fa fa-ambulance" style="font-size:24px"></i> AMBULANCE</h2>
+            <table id="customers">
+
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone no</th>
+              </tr>
+              <tr>
+                <td>Sarada Uddog</td>
+                <td>	57 F, Golpark Petrol Pump, Purna DAS Road, Gariahat, Kolkata – 700029</td>
+                <td>(033)66348350</td>
+              </tr>
+              <tr>
+                <td>Rabindra Pally Sanahati</td>
+                <td>A D 107, Kesthupur, Rabindra Pally, Prafulla Kanan, Kolkata – 700101</td>
+                <td>9674387427</td>
+              </tr>
+              <tr>
+                <td>Sebabroti</td>
+                <td>550/1, Rafi Ahmed Kidwai Road, Bangur Avenue-Lake Town, Kolkata – 700055</td>
+                <td>8013072794</td>
+              </tr>
+              <tr>
+                <td>Park Clinic</td>
+                <td>4, Near Gorky Terrace, Between Minto Park And Camac Street, Acharya Jagadish Chandra Bose Road, Circus Avenue, Kolkata – 700017</td>
+                <td>(033) 40199000</td>
+              </tr>
+
+            </table>
+            <br>
+            <h2><i class="fa fa-hospital-o" style="font-size:24px"></i> HOSPITAL</h2>
+            <table id="customers">
+
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone no</th>
+              </tr>
+              <tr>
+                <td>Sagar Dutta Hospital and College of Medicine</td>
+                <td>578, Barrackpore Trunk Rd, Kamarhati, Baranagar, Kolkata, West Bengal 700058</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Charnock Hospital</td>
+                <td>BMC 195, Biswa Bangla Sarani, Tegharia, Newtown, Kolkata, West Bengal 700157</td>
+                <td>+91 8584830814</td>
+              </tr>
+              <tr>
+                <td>ILS Hospitals, Dumdum</td>
+                <td>1, Mall Road, near Nager Bazar Flyover, Dum Dum, Kolkata, West Bengal 700080</td>
+                <td>033 4031 5000</td>
+              </tr>
+              <tr>
+                <td>BMRC Hospital</td>
+                <td>6/6, Barrackpore Trunk Rd, Talpukur, Titagarh, Barrackpore, West Bengal 700120</td>
+                <td>1800 325 5500</td>
+              </tr>
+
+
+            </table>
+            <br>
+            <h2><i class="fa fa-heartbeat" style="font-size:24px"></i> OXYGEN REFILL CENTER</h2>
+            <table id="customers">
+
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone no</th>
+              </tr>
+              <tr>
+                <td>Bengal oxygen</td>
+                <td>426, Jessore Rd, Block A, Lake Town, Kolkata, West Bengal 700055</td>
+                <td> 93397 90295</td>
+              </tr>
+              <tr>
+                <td>Sona Oxygen Private Limited</td>
+                <td>202, Jessore Rd, B L D Bagan, Amarpalli, Kamardanga, Jessore, West Bengal 700028</td>
+                <td>9007584678</td>
+              </tr>
+              <tr>
+                <td>O2 For All - Oxygen Refilling</td>
+                <td>141A 2B, S Sinthee Rd, Biswanath Colony, Sinthee, Kolkata, West Bengal 700050</td>
+                <td>8240475523</td>
+              </tr>
+              <tr>
+                <td>PharmaCo | Oxygen Cylinder Dealer</td>
+                <td>98, Jugipara Rd, Satgachi, Baguiati, South Dumdum, West Bengal 700028</td>
+                <td>98000 55678</td>
+              </tr>
+
+
+            </table>
+        </div>
+        <br><p style="text-align:right ; padding-right:40px"><a href="#back"> Back</a>
+        <div class="group1">
+          <div><h2 id="howrah" style="text-align: center; color: rgb(6, 7, 5);">HOWRAH</h2></div>
+                <h2><i class="fa fa-ambulance" style="font-size:24px"></i> AMBULANCE</h2>
+    <table id="customers">
+
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone no</th>
+      </tr>
+      <tr>
+        <td>AMBULANCE SERVICE (MILAN SANGHA)</td>
+        <td>ARUPARA, Ramrajatala, Howrah, West Bengal 711112</td>
+        <td>8334959299</td>
+      </tr>
+      <tr>
+        <td>Ambulance Service (Udit Bhawan)shibu</td>
+        <td>Santragachhi, Baruipara, Ichapur, Howrah, West Bengal 711104</td>
+        <td>9051629142</td>
+      </tr>
+      <tr>
+        <td>Rup Ambulance Service</td>
+        <td>Baksara Rd, Baksara, Howrah, West Bengal 711110</td>
+        <td>9874400948</td>
+      </tr>
+      <tr>
+        <td>MAA RADHIKA AMBULANCE SERVICE</td>
+        <td>GANGES GARDEN, 106, Kiran Chandra Singha Rd, Shibpur, Howrah, West Bengal 711102</td>
+        <td>9330774842</td>
+      </tr>
+
+
+    </table>
+    <br>
+    <h2><i class="fa fa-hospital-o" style="font-size:24px"></i> HOSPITAL</h2>
+    <table id="customers">
+
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone no</th>
+      </tr>
+      <tr>
+        <td>Nabanir hospital</td>
+        <td>37/2, Kalabagan Ln, opp. Dumurjala Stadium, Baruipara, Ichapur, Howrah, West Bengal 711104</td>
+        <td>9836006000</td>
+      </tr>
+      <tr>
+        <td>Narayana Multispeciality Hospital, Howrah</td>
+        <td>Andul Rd, near Chunabati, Podara, Mourigram, Howrah, West Bengal 711109</td>
+        <td>8067506860</td>
+      </tr>
+      <tr>
+        <td>ILS Hospitals, Howrah</td>
+        <td> 98, Dr Abani Dutta Rd, opposite Golabari, PS, Howrah, West Bengal 711101</td>
+        <td>03340880000</td>
+      </tr>
+      <tr>
+        <td>Belur State General Hospital</td>
+        <td>94/E, Dharmatala Rd, Belur, Bally, Howrah, West Bengal 711202</td>
+        <td>7278274856</td>
+      </tr>
+
+
+    </table>
+    <br>
+    <h2><i class="fa fa-heartbeat" style="font-size:24px"></i> OXYGEN REFILL CENTER</h2>
+    <table id="customers">
+
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone no</th>
+      </tr>
+      <tr>
+        <td>SNC Industrial Gases Pvt. Ltd</td>
+        <td> Bazar, Amta Rd, Balitikuri, Howrah, West Bengal 711013</td>
+        <td>03326530961</td>
+      </tr>
+      <tr>
+        <td>CARE & RELIEF</td>
+        <td>NEAR, 6/1/1/1, TARA CHAND POLLAY LANE, Surki Kal, KOL MORE, Howrah, West Bengal 711101</td>
+        <td>9831285086</td>
+      </tr>
+      <tr>
+        <td>Echo Gases Private Limited</td>
+        <td>Alamohan Das Road, Natun Pally, Kashipur, Netajigarh, Dasnagar, Howrah, West Bengal 711105</td>
+        <td>03326670132</td>
+      </tr>
+
+
+
+    </table>
+            </div>
+
+        </div>
+    </label>
+<p style="text-align:right ; padding-right:40px"><a href="#back"> Back</a>
+
+</p>
+    </div>
+
+
+
+</body>
+</html>

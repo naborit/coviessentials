@@ -1,0 +1,52 @@
+{% extends 'base.html '%} {% block content %}
+<!--showing products-->
+<style>
+  img {
+    width: 300px;
+    height: 250px;
+  }
+
+  #colour {
+    color: black;
+  }
+</style>
+<center>
+  {% if searched %}
+    <h1>You Searched For '{{searched}}'</h1>
+  {% else %}
+    <h1>Hey! You Forgot to Search for an Item...</h1>
+  {% endif %}
+</center>
+
+<div class="container-fluid mt-3">
+  <div class="row">
+      </div>
+    </div>
+    <!--showing products-->
+    <div id="products" style="text-align: center">
+      <div class="row mx-auto">
+        {% for item in items %}
+        <div class="card mx-auto mb-3" style="width: 18rem">
+          <img
+            src="{{item.image.url}}"
+            class="card-img-top p-2"
+            alt="An Image of product"
+          />
+          <div class="card-body">
+            <h5 id="colour" class="card-title">{{item.name}}</h5>
+            <p class="card-text1"><b>Rs.{{item.price}}</b></p>
+            <a href="#" class="btn btn-primary border">Add to Cart</a>
+            <p class="card-text">{{item.text}}</p>
+
+          </div>
+        </div>
+        {% endfor %}
+        {% if not items %}
+          <h2> Sorry! No Item named '{{searched}}' found</h2>
+        {% endif %}
+
+      </div>
+    </div>
+ </div>
+</div>
+{% endblock %}

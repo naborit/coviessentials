@@ -1,0 +1,123 @@
+{% extends 'base.html '%}
+{% block content %}
+{% load static %}
+<style>
+body{
+	background-image:url("{%static 'store\images\loginbackground.jpg'%}");
+	background-size:100%;
+	background-repeat:no-repeat;
+}
+  .loginbox{
+background:  hsla(0, 89%, 76%, 0.3);
+height:550px;
+width:500px;
+top:20%;
+left:35%;
+position:static;
+transform:translate(50%-50%);
+box-sizing:border-box;
+padding:40px 30px;
+border-radius:10px;
+}
+h1{
+	margin:0;
+	padding:0 0 20px;
+	text-align:center;
+	font-size:22px;
+}
+.loginbox p{
+	margin:0;
+	padding:0;
+	text-align:left;
+	font-weight:bold;
+	font-size:18px;
+}
+.loginbox input{
+	width: 100%;
+	margin-bottom:20px;
+} 
+.loginbox input[type="text"], input[type="password"], input[type="email"],input[type="Phone no"]
+{
+	border:none;
+	border-bottom:1px solid #fff;
+	background:transparent;
+	outline:none;
+	height:40px;
+	color:black;
+	font-size:16px;
+}
+.loginbox input[type="submit"]
+{
+	border:none;
+	background:rgb(0,0,255);opacity:0.6;;
+	outline:none;
+	height:40px;
+	color:#070707;
+	font-size:18px;
+	border-radius:20px;
+}
+.loginbox input[type="submit"]:hover, input[type="reset"]:hover
+{
+	background:red;
+	color:#000;
+}
+a:hover{
+	color:red;
+	font-size:20px;
+}
+.loginbox input[type="checkbox"] {
+	margin-top: 3px;
+}
+a{
+	text-decoration: none;
+	text-transform: none;
+}
+a:hover{
+	font-size: 16px;
+}
+h2{
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	margin: 0;
+	padding-bottom: 50px;
+}
+
+   </style>
+   <center>
+   <div class="loginbox">
+   <!-- <img src="{% static 'store\images\logoo.jpg'%}" class="das"> -->
+   <h2>Sign Up</h2>
+   <form action="/signup" method="POST">
+	{% csrf_token %}
+	{% if error %} 
+	<div class="alert alert-danger" role="alert">
+	  <p>{{error}}</p>
+	</div>
+	{% endif %}
+    <div class="form-group">
+			<div class="row">
+				<div class="col"><input type="text" class="form-control"value="{{values.first_name}}" name="first_name" placeholder="First Name"></div>
+				<div class="col"><input type="text" class="form-control"value="{{values.last_name}}" name="last_name" placeholder="Last Name" ></div>
+			</div>        	
+        </div>
+        <div class="form-group">
+            <input type="Phone no" class="form-control" name="phone"value="{{values.phone}}" placeholder="Phone Number" required="required">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" value="{{values.email}}"placeholder="Email Address" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+        </div>        
+        <div class="form-group">
+         <label class="form-check-label"><input type="checkbox" style="width: 25px;" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+        </div>
+         <input class="btn btn-block btn-info"type="submit" value="Create An Account">
+
+</form>
+ </center>
+{% endblock %}

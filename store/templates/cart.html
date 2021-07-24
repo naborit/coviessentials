@@ -1,0 +1,152 @@
+{% extends 'base.html' %} {% block content %} {% load cart %} {% load custom_filter %}
+
+<style>
+  .color {
+    color: rgb(93, 27, 216);
+  }
+</style>
+<div class="container">
+  <div class="border rounded p-4 m-4">
+    <p class="display-4 pl-4 ml-4"><b class="color">Shopping Cart</b></p>
+    <hr />
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Sno.</th>
+          <th>Image</th>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>
+            <img
+              class="rounded-circle"
+              style="height: 90px"
+              src="{{product.image.url}}"
+              alt="Product of image"
+            />
+          </td>
+          <td><b>{{product.name}}</b></td>
+          <td>{{product.price|currency}}</td>
+          <td>{{product|cart_quantity:request.session.cart}}</td>
+          <td>{{product|price_total:request.session.cart|currency}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <th colspan="4"></th>
+          <th colspan="">Total</th>
+          <th>{{products|total_cart_price:request.session.cart|currency}}</th>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="m-3 p-3">
+      <a
+        href="#"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        class="col-lg-3 btn btn-outline-info border rounded"
+        >Check Out</a
+      >
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: black">
+          Check Out Form
+        </h5>
+        <hr />
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="m-2 p-3">
+          <form action="/check-out" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label form=""><b>Address</b></label>
+              <input
+                type="text"
+                name="address"
+                required="required"
+                class="form-control"
+                placeholder="House No. Building Name(Required)*"
+                aria-describedby="helpId"
+              />
+            </div>
+            <div class="form-group">
+              <label form=""><b>City</b></label>
+              <input
+                type="text"
+                name="phone"
+                required="required"
+                class="form-control"
+                placeholder="City(Required)*"
+                aria-describedby="helpId"
+              />
+            </div>
+            <div class="form-group">
+              <label form=""><b>Pincode</b></label>
+              <input
+                type="text"
+                name="pincode"
+                required="required"
+                class="form-control"
+                placeholder="Pincode(Required)*"
+                aria-describedby="helpId"
+              />
+            </div>
+            <div class="form-group">
+              <label form=""><b>Phone Number</b></label>
+              <input
+                type="text"
+                name="phone"
+                required="required"
+                class="form-control"
+                placeholder="Phone Number (Required)*"
+                aria-describedby="helpId"
+              />
+            </div>
+            <label class="container">
+              <input type="radio" name="radio" required="required" />
+              <span class="checkmark"
+                ><b>Only Cash on Delivary Available</b></span
+              >
+            </label>
+            <hr />
+            <input
+              type="submit"
+              class="btn btn-primary col-lg-8 m-1 p-1"
+              value="Place Order"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
